@@ -1,6 +1,6 @@
 ﻿using System.Configuration;
 
-namespace SlackSharp
+namespace SlackSharp.Configuration
 {
     public static class SlackConfig
     {

@@ -1,10 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 using Newtonsoft.Json;
+using SlackSharp.WebApi.Exceptions;
 
 namespace SlackSharp.WebApi
 {
@@ -15,6 +17,16 @@ namespace SlackSharp.WebApi
 
         protected SlackWebApi(string apiToken, string apiUrl)
         {
+            if (string.IsNullOrEmpty(apiToken))
+            {
+                throw new ArgumentNullException(nameof(apiToken));
+            }
+
+            if (string.IsNullOrEmpty(apiUrl))
+            {
+                throw new ArgumentNullException(nameof(apiUrl));
+            }
+
             ApiToken = apiToken;
             ApiUrl = apiUrl;
         }
