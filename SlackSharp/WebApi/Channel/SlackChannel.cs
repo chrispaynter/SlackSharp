@@ -15,7 +15,7 @@ namespace SlackSharp.WebApi.Channel
         [JsonProperty(PropertyName = "is_channel")]
         public bool IsChannel { get; set; }
 
-        public DateTime Created { get; set; }
+        public string Created { get; set; }
 
         public string Creator { get; set; }
 
@@ -25,7 +25,7 @@ namespace SlackSharp.WebApi.Channel
         [JsonProperty(PropertyName = "is_general")]
         public bool IsGeneral { get; set; }
 
-        public List<SlackUser> Members { get; set; }
+        public List<string> Members { get; set; }
 
         public SlackChannelValue Topic { get; set; }
 

@@ -38,6 +38,7 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -47,10 +48,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configuration\ISlackApiConfiguration.cs" />
     <Compile Include="Extensions\SlackApiExtensions.cs" />
     <Compile Include="OAuth\Models\OuthAccessResponse.cs" />
     <Compile Include="OAuth\SlackOAuthApi.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rtm\Events\SlackRtmEventMessage.cs" />
+    <Compile Include="Rtm\Events\SlackRtmEvent.cs" />
+    <Compile Include="Rtm\Events\SlackRtmEventUserTyping.cs" />
+    <Compile Include="Rtm\SlackRtmEventType.cs" />
     <Compile Include="Rtm\SlackRtmMessageType.cs" />
     <Compile Include="Rtm\SlackRtmReplyMessage.cs" />
     <Compile Include="Rtm\SlackRtmSendMessage.cs" />

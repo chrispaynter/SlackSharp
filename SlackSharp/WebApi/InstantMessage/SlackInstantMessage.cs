@@ -12,7 +12,7 @@ namespace SlackSharp.WebApi.InstantMessage
 
         public string User { get; set; }
 
-        public DateTime Created { get; set; }
+        public string Created { get; set; }
         
         [JsonProperty(PropertyName = "is_user_deleted")]
         public bool IsUserDeleted { get; set; }

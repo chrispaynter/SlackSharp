@@ -1,11 +1,12 @@
 ﻿using System.Threading.Tasks;
+using SlackSharp.Configuration;
 using SlackSharp.Extensions;
 
 namespace SlackSharp.WebApi.Chat
 {
     public class SlackChatWebApi : SlackWebApi
     {
-        public SlackChatWebApi(string apiToken, string apiUrl) : base(apiToken, apiUrl)
+        public SlackChatWebApi(ISlackApiConfiguration apiConfiguration) : base(apiConfiguration)
         {
         }
 

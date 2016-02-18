@@ -1,11 +1,12 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using SlackSharp.Configuration;
 
 namespace SlackSharp.WebApi.InstantMessage
 {
     public class SlackInstantMessageWebApi : SlackWebApi
     {
-        public SlackInstantMessageWebApi(string apiToken, string apiUrl) : base(apiToken, apiUrl)
+        public SlackInstantMessageWebApi(ISlackApiConfiguration apiConfiguration) : base(apiConfiguration)
         {
         }
 

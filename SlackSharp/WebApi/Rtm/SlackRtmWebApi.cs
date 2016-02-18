@@ -1,14 +1,15 @@
 using System.Threading.Tasks;
+using SlackSharp.Configuration;
 
 namespace SlackSharp.WebApi.Rtm
 {
     public class SlackRtmWebApi : SlackWebApi
     {
-        public SlackRtmWebApi(string apiToken, string apiUrl) : base(apiToken, apiUrl)
+        public SlackRtmWebApi(ISlackApiConfiguration apiConfiguration) : base(apiConfiguration)
         {
         }
 
-        public async Task<SlackRtmStartResponse> PostMessage()
+        public async Task<SlackRtmStartResponse> Start()
         {
             return await Post<SlackRtmStartResponse>("rtm.start");
         }

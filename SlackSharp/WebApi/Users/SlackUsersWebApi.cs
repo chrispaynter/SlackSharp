@@ -1,10 +1,11 @@
 ﻿using System.Threading.Tasks;
+using SlackSharp.Configuration;
 
 namespace SlackSharp.WebApi.Users
 {
     public class SlackUsersWebApi : SlackWebApi
     {
-        public SlackUsersWebApi(string apiToken, string apiUrl) : base(apiToken, apiUrl)
+        public SlackUsersWebApi(ISlackApiConfiguration apiConfiguration) : base(apiConfiguration)
         {
         }
 

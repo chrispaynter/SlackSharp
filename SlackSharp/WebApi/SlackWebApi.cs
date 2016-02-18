@@ -6,28 +6,28 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 using Newtonsoft.Json;
+using SlackSharp.Configuration;
 
 namespace SlackSharp.WebApi
 {
     public abstract class SlackWebApi
     {
-        public string ApiToken { get; set; }
-        public string ApiUrl { get; set; }
+        public ISlackApiConfiguration ApiConfiguration { get; set; }
 
-        protected SlackWebApi(string apiToken, string apiUrl)
+
+        protected SlackWebApi(ISlackApiConfiguration apiConfiguration)
         {
-            if (string.IsNullOrEmpty(apiToken))
+            if (string.IsNullOrEmpty(apiConfiguration.Token))
             {
-                throw new ArgumentNullException(nameof(apiToken));
+                throw new ArgumentNullException(nameof(apiConfiguration.Token));
             }
 
-            if (string.IsNullOrEmpty(apiUrl))
+            if (string.IsNullOrEmpty(apiConfiguration.Url))
             {
-                throw new ArgumentNullException(nameof(apiUrl));
+                throw new ArgumentNullException(nameof(apiConfiguration.Url));
             }
 
-            ApiToken = apiToken;
-            ApiUrl = apiUrl;
+            ApiConfiguration = apiConfiguration;
         }
 
         public async Task<TReturnType> Post<TReturnType>(string method)
@@ -52,9 +52,9 @@ namespace SlackSharp.WebApi
         public async Task<string> Post(string method, Dictionary<string, string> postParameters)
         {
             postParameters = postParameters ?? new Dictionary<string, string>();
-            postParameters.Add("token", ApiToken);
+            postParameters.Add("token", ApiConfiguration.Token);
 
-            var request = WebRequest.Create(string.Format(ApiUrl, method));
+            var request = WebRequest.Create(string.Format(ApiConfiguration.Url, method));
             var postString = PostString(postParameters);
 
             request.Method = "POST";

@@ -9,6 +9,6 @@ namespace SlackSharp.WebApi.Channel
         public string Creator { get; set; }
 
         [JsonProperty(PropertyName = "last_set")]
-        public DateTime LastSet { get; set; }
+        public string LastSet { get; set; }
     }
 }

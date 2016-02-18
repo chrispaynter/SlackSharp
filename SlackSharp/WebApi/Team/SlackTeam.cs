@@ -11,7 +11,7 @@ namespace SlackSharp.WebApi.Team
         public string Domain { get; set; }
 
         [JsonProperty(PropertyName = "email_domain")]
-        public bool EmailDomain { get; set; }
+        public string EmailDomain { get; set; }
         
         public SlackTeamIcon Icon { get; set; }
     }
