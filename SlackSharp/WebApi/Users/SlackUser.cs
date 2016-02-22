@@ -6,11 +6,28 @@ namespace SlackSharp.WebApi.Users
     {
         public string Id { get; set; }
 
+        [JsonProperty(PropertyName = "team_id")]
+        public string TeamId { get; set; }
+
         public string Name { get; set; }
 
         public bool Deleted { get; set; }
 
+        public string Status { get; set; }
+
         public string Color { get; set; }
+
+        [JsonProperty(PropertyName = "real_name")]
+        public string RealName { get; set; }
+
+        [JsonProperty(PropertyName = "tz")]
+        public string TimeZone { get; set; }
+
+        [JsonProperty(PropertyName = "tz_label")]
+        public string TimeZoneLabel { get; set; }
+
+        [JsonProperty(PropertyName = "tz_offset")]
+        public string TimeZoneOffset { get; set; }
 
         public SlackUserProfile Profile { get; set; }
 
@@ -28,6 +45,9 @@ namespace SlackSharp.WebApi.Users
 
         [JsonProperty(PropertyName = "is_ultra_restricted")]
         public bool IsUltraRestricted { get; set; }
+
+        [JsonProperty(PropertyName = "is_bot")]
+        public bool IsBot { get; set; }
 
         [JsonProperty(PropertyName = "has_2fa")]
         public bool Has2fa { get; set; }
