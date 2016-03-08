@@ -12,6 +12,6 @@ namespace SlackSharp.Rtm.Events
         public string Text { get; set; }
 
         [JsonProperty(PropertyName = "ts")]
-        public string TimeStampe { get; set; }
+        public string TimeStamp { get; set; }
     }
 }

@@ -7,6 +7,9 @@ namespace SlackSharp.Rtm
     [JsonConverter(typeof(StringEnumConverter))]
     public enum SlackRtmEventType
     {
+        [EnumMember(Value = "error")]
+        Error,
+
         [EnumMember(Value = "hello")]
         Hello,
 

@@ -9,6 +9,9 @@ namespace SlackSharp.WebApi.Errors
     {
         NoErrors,
 
+        [EnumMember(Value = "error")]
+        Error,
+
         ///<summary>Team is being migrated between servers.</summary>
         [EnumMember(Value = "migration_in_progress")]
         MigrationInProgress,
